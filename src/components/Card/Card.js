@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
     const {flags,name,population,capital}=props.country;
@@ -11,6 +12,7 @@ const Card = (props) => {
     marginBottom:'10px',
 
   }
+  
     return (
         <div className='container'>
                             <div className="card" style={style}>
@@ -19,7 +21,8 @@ const Card = (props) => {
                                         <h6 className="card-text">Country Name:: {name.common}</h6>
                                         <p>Capital:: {capital}</p>
                                         <p>Population:: {population}</p>
-                                        <button type="button" class="btn btn-info">Show Details</button>
+                                        <Link to={`/country/${name.common}`}><button type="button" className="btn btn-info">Show Details</button></Link>
+                                        
                                    </div>
                             </div>
         </div>

@@ -49,17 +49,32 @@ const CountryDetails = () => {
     // .then(data=>setCountry(data))
     // console.log(country)
     if(!country[0]){
-        return <h3>Looding....</h3>
+        return <h6>Looding....</h6>
+    }
+    const {flags,capital,area,independent,name,region}=country[0];
+    const style={
+        width:'30rem',
+        height:'25rem',
+        border: '2px solid red',
+        padding:'20px',
+        textAlign:'center',
+        margin:'0 auto',
+        borderRadius:'10px',
+        background:`lightblue url(${flags.png}) noRepeat fixed center`
     }
     return (
         
-        <div>
-            <h1>{countyName} :: Details comming soon....</h1>
+        <div style={style} >
+            <h3>Country Name:: {countyName}</h3>
+            <h6>Official Name:: {name.official}</h6>
             {/* <CC countryName={countyName}></CC> */}
-            <h1>Capatal : {country[0].capital[0]}</h1>
-          
+            <h5>Capatal : {capital}</h5>
+             <p>Area:: {area}</p>
+             {independent?<p>Indepandent:: YES</p>:<p>Indepandent:: NO</p>}
+             
+             <p>Region:: {region}</p>
             
-            <Link to='/'><button>Back</button></Link>
+            <Link to='/'><button type="button" className="btn btn-success">Back Home</button></Link>
         </div>
     );
 };

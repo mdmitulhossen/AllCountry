@@ -14,7 +14,7 @@ const ShowCountry = () => {
     },[])
     
     if(!country[0]){
-        return <h3>Looding</h3>
+        return <h6>Looding.....</h6>
     }
     // console.log(country[0].flags.png)
 
